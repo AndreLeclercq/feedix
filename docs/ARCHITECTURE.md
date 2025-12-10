@@ -20,7 +20,7 @@
 - **Sortie**: Liste d'articles bruts (titre, URL, contenu, date)
 
 ### 2. Keyword Filter
-- **Technologie**: Python natif (opérations sur strings)
+- **Technologie**: `spacy` (Python)
 - **Fonction**:
   - Filtrage par mots-clés exacts (case-insensitive)
   - Calcul de score de pertinence basique
