@@ -166,3 +166,8 @@ This project is open-source and available under the [MIT License](../LICENSE).
 
 - Mistral AI for providing the summarization API
 - All open-source contributors whose libraries make this project possible
+
+## Disclaimer
+
+Project developed by a human.
+Only the "First Commit" was generated with Mistral AI to help structure the project’s initial design.
