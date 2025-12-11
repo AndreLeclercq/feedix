@@ -1,0 +1,12 @@
+{
+  "feeds": [
+    "https://www.actuia.com/feed/",
+    "https://www.journaldunet.com/solutions/analytics/big-data/rss/",
+    "https://www.larevuedudigital.com/category/bigdata/feed/",
+    "https://www.lebigdata.fr/feed",
+    "https://www.lemondeinformatique.fr/flux-rss/thematique/big-data/rss.xml",
+    "https://www.lemondeinformatique.fr/flux-rss/thematique/cloud-computing/rss.xml",
+    "https://www.lemondeinformatique.fr/flux-rss/thematique/data-center/rss.xml",
+    "https://www.silicon.fr/feed"
+  ]
+}
