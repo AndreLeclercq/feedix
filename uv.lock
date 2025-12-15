@@ -215,6 +215,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "feedparser" },
+    { name = "fr-core-news-md" },
     { name = "fr-core-news-sm" },
     { name = "jinja2" },
     { name = "requests" },
@@ -225,6 +226,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "feedparser", specifier = ">=6.0.12" },
+    { name = "fr-core-news-md", specifier = ">=3.8.0" },
     { name = "fr-core-news-sm", specifier = ">=3.8.0" },
     { name = "jinja2", specifier = ">=3.1.6" },
     { name = "requests", specifier = ">=2.32.5" },
@@ -242,6 +244,14 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/dc/79/db7edb5e77d6dfbc54d7d9df72828be4318275b2e580549ff45a962f6461/feedparser-6.0.12.tar.gz", hash = "sha256:64f76ce90ae3e8ef5d1ede0f8d3b50ce26bcce71dd8ae5e82b1cd2d4a5f94228", size = 286579, upload-time = "2025-09-10T13:33:59.486Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/4e/eb/c96d64137e29ae17d83ad2552470bafe3a7a915e85434d9942077d7fd011/feedparser-6.0.12-py3-none-any.whl", hash = "sha256:6bbff10f5a52662c00a2e3f86a38928c37c48f77b3c511aedcd51de933549324", size = 81480, upload-time = "2025-09-10T13:33:58.022Z" },
+]
+
+[[package]]
+name = "fr-core-news-md"
+version = "3.8.0"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/00/e1/ff779a8c435bb0663941c22791a895548b35631b39415984338439c86147/fr_core_news_md-3.8.0-py3-none-any.whl", hash = "sha256:8a70d090a54ef77525c3ffa6a6195b9d365f2cf369ae1cd84ede93f3d709079e", size = 45836173, upload-time = "2025-09-30T21:28:58.755Z" },
 ]
 
 [[package]]

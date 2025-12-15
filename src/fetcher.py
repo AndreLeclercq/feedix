@@ -1,6 +1,7 @@
 import feedparser
 import json
 import datetime
+import requests
 from uuid_extensions import uuid7
 import database.queries as query
 
@@ -9,8 +10,20 @@ def fetch_feeds():
         data = json.load(file)
 
     feeds = data['feeds']
+    total_articles_fetch = 0
+    print(f"Total feeds: {len(feeds)}")
 
     for feed in feeds:
+        #print("Current feed: ", feed)
+        try:
+            get = requests.get(feed, timeout=5)
+        except:
+            continue
+
+        if not get.status_code == 200:
+            print(f"Feed url error on {feed} | Status: {get.status_code}")
+            continue
+
         todays_articles = []
         feed_parse = feedparser.parse(feed)
         for article in feed_parse.entries:
@@ -22,10 +35,13 @@ def fetch_feeds():
             else:
                 continue
 
-            if article.date_parsed == yesterday:
+            article_exists = query.get_article_by_title((article.title,))
+
+            if article.date_parsed == yesterday and not article_exists:
                 todays_articles.append(article)
 
         if len(todays_articles) > 0:
+            total_articles_fetch += len(todays_articles)
             channel = feed_parse.feed
             channel_id = query.get_channel_id_by_link((channel.link,))
 
@@ -43,6 +59,6 @@ def fetch_feeds():
                     article.title,
                     article.date_parsed,
                     article.link,
-                    article.description,
-                    ""
+                    article.description
                 ))
+    print(f"Articles fetch: {total_articles_fetch}")

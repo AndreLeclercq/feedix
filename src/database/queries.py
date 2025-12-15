@@ -43,13 +43,23 @@ def create_article(values):
                 title, 
                 date, 
                 link, 
-                description, 
-                summary
+                description
             )
-            VALUES(?,?,?,?,?,?,?,?)
+            VALUES(?,?,?,?,?,?,?)
         """
         conn.execute(sql, values)
         conn.commit()
+
+def get_article_by_title(value):
+    with get_db_connection() as conn:
+        sql = """
+            SELECT * FROM articles WHERE title=?
+        """
+        cur = conn.cursor()
+        cur.execute(sql, value)
+        result = cur.fetchone()
+        if result: 
+            return result[0]
 
 def get_articles_by_status(value):
     with get_db_connection() as conn:
@@ -61,3 +71,32 @@ def get_articles_by_status(value):
         result = cur.fetchall()
         if result:
             return result
+
+def update_article_score_by_id(values):
+    with get_db_connection() as conn:
+        sql = """
+            UPDATE articles
+            SET status=?, score=?
+            WHERE id=?
+        """
+        conn.execute(sql, values)
+        conn.commit()
+
+def update_article_summary_by_id(values):
+    with get_db_connection() as conn:
+        sql = """
+            UPDATE articles
+            SET status=?, summary=?
+            WHERE id=?
+        """
+        conn.execute(sql, values)
+        conn.commit()
+
+def delete_article_by_id(value):
+    with get_db_connection() as conn:
+        sql = """
+            DELETE FROM articles
+            WHERE id=?
+        """
+        conn.execute(sql, value)
+        conn.commit()
