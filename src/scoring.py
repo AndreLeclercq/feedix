@@ -76,5 +76,3 @@ def scoring_articles():
                 query.delete_article_by_id((article_id,))
             #print("#######################################")
     print(f"Articles scored: {articles_scored}")
-
-scoring_articles()
