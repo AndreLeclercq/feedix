@@ -19,6 +19,7 @@ def create_tables():
             date DATETIME NOT NULL,
             link VARCHAR(250) NOT NULL,
             description TEXT NOT NULL,
+            score REAL,
             summary TEXT,
             FOREIGN KEY (channel_id) REFERENCES channels(id)
                 ON DELETE CASCADE
