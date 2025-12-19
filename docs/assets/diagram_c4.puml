@@ -1,0 +1,23 @@
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(user, "Utilisateur")
+System_Boundary(c1, "Feedix") {
+    Container(configfiles, "Config Files", "config/feeds.json config/keywords.json", "L'utilisateur peut configurer ses flux RSS ainsi que ses mots-clés.")
+    Container(rssfetcher, "RSS Fetcher", "src/fetcher.py", "Récupère les articles de la veille des flux rss.")
+    Container(filterandscore, "Filtering & Scoring", "src/scoring.py", "Filtre par mots-clés et attribue un score de pertinence en fonction du score de similarité (spaCy) et du poids des mots-clés.")
+    Container(summarize, "Summarizing", "src/summarize.py", "Génère un résumé en fonction du score obtenu à l'aide de l'API Mistral.")
+    Container(markdown, "Markdown Formating", "src/markdown.py", "Génère un fichier markdown basé sur un template prédéfinie dans templates/template.md.")
+    Container(output, "Output", "output/YYYY-MM-DD.md", "Fichier au format markdown créé.")
+}
+System(mistralai, "MistralAI API")
+
+Rel_R(user, configfiles, "Configure les fichiers feeds & keywords")
+Rel(configfiles, rssfetcher, "", "")
+Rel(rssfetcher, filterandscore, "", "")
+Rel_R(filterandscore, summarize, "", "")
+Rel_U(summarize, markdown, "", "")
+Rel_U(markdown, output, "", "")
+Rel_R(summarize, mistralai, "Envoi des données avec le prompt et retourne les résumés généré avec MistralAI")
+Rel_R(mistralai, summarize, "", "")
+@enduml
