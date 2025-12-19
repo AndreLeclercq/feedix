@@ -7,10 +7,14 @@ load_dotenv()
 
 def render_markdown():
     articles_summerized = query.get_articles_by_status(("summarized",))
+    articles_summerized.sort(key=lambda tup: tup[7], reverse=True)
+
+    print(type(articles_summerized[0]))
 
     if articles_summerized:
         data = []
         for article in articles_summerized:
+            article_id = article[0]
             article_date = article[4]
             article_link = article[5]
             article_summary = article[8]
@@ -18,10 +22,12 @@ def render_markdown():
             article_data = {
                 "date": article_date,
                 "link": article_link,
-                "summary": article_summary[1:-1]
+                "summary": article_summary            
             }
             
             data.append(article_data)
+
+            query.update_article_status_by_id(("published", article_id))
 
         #print(f"Articles summerized: {articles_summerized[0][4]}")
         

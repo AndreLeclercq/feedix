@@ -92,6 +92,16 @@ def update_article_summary_by_id(values):
         conn.execute(sql, values)
         conn.commit()
 
+def update_article_status_by_id(values):
+    with get_db_connection() as conn:
+        sql = """
+            UPDATE articles
+            SET status=?
+            WHERE id=?
+        """
+        conn.execute(sql, values)
+        conn.commit()
+
 def delete_article_by_id(value):
     with get_db_connection() as conn:
         sql = """

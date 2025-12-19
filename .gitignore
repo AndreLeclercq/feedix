@@ -24,3 +24,5 @@ fr_core_news_*
 .vscode/
 *.swp
 *.swo
+
+output/
