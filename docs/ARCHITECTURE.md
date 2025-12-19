@@ -34,8 +34,6 @@
 - **Sortie**: `output/YYYY-MM-DD-report.md`
 
 
-```
-
 ## Configuration
 
 ### Fichiers de Configuration
@@ -43,8 +41,6 @@
 - `config/keywords.json`: Liste des mots-clés avec un poids attribué à chacun
 - `.env`: Variables d'environnement (clé API Mistral)
 
-
-```
 
 ## Choix Techniques
 
