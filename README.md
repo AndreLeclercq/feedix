@@ -1,3 +1,10 @@
+```
+▗▄▄▄▖▗▄▄▄▖▗▄▄▄▖▗▄▄▄ ▗▄▄▄▖▗▖  ▗▖
+▐▌   ▐▌   ▐▌   ▐▌  █  █   ▝▚▞▘ 
+▐▛▀▀▘▐▛▀▀▘▐▛▀▀▘▐▌  █  █    ▐▌  
+▐▌   ▐▙▄▄▖▐▙▄▄▖▐▙▄▄▀▗▄█▄▖▗▞▘▝▚▖
+```
+
 # Feedix - RSS Analyzer with AI Summarization
 
 ## 📋 Overview
@@ -74,9 +81,13 @@ _This is a learning project for me, so the documentation is in French._
 ## 🎯 MVP Features
 
 ✅ RSS feed fetching
+
 ✅ Keyword-based filtering
+
 ✅ Mistral API integration for summarization
+
 ✅ Markdown report generation
+
 ✅ Configurable via JSON and environment variables
 
 ## 🔧 Configuration
