@@ -1,10 +1,11 @@
-# Feedix - RSS Analyzer with AI Summarization
 ```
 ▗▄▄▄▖▗▄▄▄▖▗▄▄▄▖▗▄▄▄ ▗▄▄▄▖▗▖  ▗▖
 ▐▌   ▐▌   ▐▌   ▐▌  █  █   ▝▚▞▘ 
 ▐▛▀▀▘▐▛▀▀▘▐▛▀▀▘▐▌  █  █    ▐▌  
 ▐▌   ▐▙▄▄▖▐▙▄▄▖▐▙▄▄▀▗▄█▄▖▗▞▘▝▚▖
 ```
+
+# Feedix - RSS Analyzer with AI Summarization
 
 ## 📋 Overview
 
